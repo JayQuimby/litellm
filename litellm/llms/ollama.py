@@ -132,10 +132,10 @@ def get_ollama_response(
     model_response=None,
     encoding=None,
 ):
-    if api_base.endswith("/api/generate"):
+    if api_base.endswith("/chat/completions"):
         url = api_base
     else:
-        url = f"{api_base}/api/generate"
+        url = f"{api_base}/chat/completions"
 
     ## Load Config
     config = litellm.OllamaConfig.get_config()
